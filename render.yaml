@@ -1,0 +1,19 @@
+# One-click deploy on Render (Blueprint). The Node server builds and serves the React app,
+# so frontend and API share one URL (no CORS, one deploy).
+services:
+  - type: web
+    name: reelhunt
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
+      - key: TMDB_READ_TOKEN
+        sync: false # set in the Render dashboard
+      - key: DATABASE_URL
+        sync: false # Postgres connection string (e.g. Neon). Free Render disks are wiped on redeploy, so SQLite is not used in production.

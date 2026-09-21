@@ -1,0 +1,23 @@
+{
+  "name": "reelhunt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Movie discovery app \u2014 React client + Node.js backend-for-frontend over the TMDB API",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:mock": "concurrently -n mock,server,client -c gray,blue,magenta \"npm run mock -w server\" \"npm run dev:mock -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm test -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
