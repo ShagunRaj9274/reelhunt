@@ -4,7 +4,7 @@ A full-stack movie discovery app: browse, search, filter and sort a catalogue of
 
 **React (Vite) + Node.js (Express)**, with movie data from [TMDB](https://www.themoviedb.org/) served through my own backend.
 
-> 🔗 **Live demo:** `https://<your-app>.onrender.com`  ·  🎥 **Video walkthrough:** `<your Loom / Drive link>`
+> 🔗 **Live demo:** https://reelhunt.onrender.com/  ·  🎥 **Video walkthrough:** https://drive.google.com/file/d/1k0wOhPirvOlAZvdViRytNyTCtC_FEpoC/view?usp=sharing
 
 ---
 
